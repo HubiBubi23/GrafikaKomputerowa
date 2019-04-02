@@ -75,7 +75,7 @@ public class Transforms2D extends JPanel {
 		 {
 		 	g2.rotate(3.14);
 		 	g2.shear(0, 0.2);
-		 	g2.translate(-100, 0);
+		 	g2.translate(-110, 0);
 		 }
 		
 			g2.drawPolygon(p); // Draw image with center at (0,0).
