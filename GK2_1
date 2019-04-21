@@ -10,16 +10,18 @@
 <script>
 $(function(){
 
-    var canvas=document.getElementById("canvas");
+    var canvas=document.getElementById("myCanvas");
     var ctx=canvas.getContext("2d");
 
-    function drawStar(cx,cy,spikes,outerRadius,innerRadius){
+    function drawShape(cx,cy,spikes,outerRadius,innerRadius){
       var rot=Math.PI/2*3;
       var x=cx;
       var y=cy;
       var step=Math.PI/spikes;
 
+		//Tworzenie nowej ścieżki
       ctx.beginPath();
+	  
       ctx.moveTo(cx,cy-outerRadius)
       for(i=0;i<spikes;i++){
         x=cx+Math.cos(rot)*outerRadius;
@@ -33,84 +35,102 @@ $(function(){
         rot+=step
       }
       ctx.lineTo(cx,cy-outerRadius);
+	  
+		//Zamknięcie ściezki
       ctx.closePath();
-      ctx.lineWidth=3.7;
-      //ctx.strokeStyle='black';
+      ctx.lineWidth=3.7; 
+	  
+		//Rysowanie kształtu poprzez odrysowanie konturu
       ctx.stroke();
-      ctx.fillStyle='yellow';
+	  
+	  //Wypełnienie wyznaczonego obszaru kolorami RGB
+      ctx.fillStyle='rgb(0, 255, 1)';		
       ctx.fill();
     }
 
-    drawStar(250,250,5,120,50);
-	
-
-	
-	
-
-	ctx.moveTo(225,275);
-    ctx.bezierCurveTo(250,295,250,300,280,275);
-    ctx.moveTo(225,275);
-    ctx.bezierCurveTo(250,285,250,290,280,275);
-	ctx.moveTo(225,275);
-    ctx.bezierCurveTo(250,285,250,297,280,275);
-	ctx.moveTo(225,275);
-    ctx.bezierCurveTo(250,285,247,299,280,275);
+		//Rysowanie trójkąta (x,y,liczba wierzchołków, kąt wewnętrzny, kąt zewnętrzny)
+    drawShape(300,300,3,120,60);
+		
+	//UŚMIECH
+			//Lewy kącik ust
+	ctx.moveTo(270,330);
+    ctx.bezierCurveTo(275,325,275,320,275,318);	
+			//Prawy kącik ust
+	ctx.moveTo(335,330);
+	ctx.bezierCurveTo(325,325,325,320,325,318);		
+		
+		//USTA
+	ctx.moveTo(275,325);
+    ctx.bezierCurveTo(300,345,300,350,330,325);
+    ctx.moveTo(275,325);
+    ctx.bezierCurveTo(300,335,300,340,330,325);
+	ctx.moveTo(275,325);
+    ctx.bezierCurveTo(300,335,300,347,330,325);
+	ctx.moveTo(275,325);
+    ctx.bezierCurveTo(300,335,297,349,330,325);	
     ctx.stroke();
 	
+	
+		//Zęby
 	ctx.fillStyle='white';
-	ctx.fillRect(247,281,5,5)
-	ctx.fillRect(253,281,5,5)
+	ctx.fillRect(297,331,5,5) //(x,y,width,height)
+	ctx.fillRect(303,331,5,5)
 	
 	
+		//Lewe białko oka
 	ctx.beginPath();
 	ctx.lineWidth=3;
 	ctx.strokeStyle='white';
-    ctx.arc(270, 225, 7, 0, 2 * Math.PI);
+    ctx.arc(280,280, 7, 0, 2 * Math.PI);
     ctx.stroke();
 	
+		//Prawe białko oka
 	ctx.beginPath();
 	ctx.lineWidth=3;
 	ctx.strokeStyle='white';
-    ctx.arc(235, 225, 7, 0, 2 * Math.PI);
+    ctx.arc(320,280, 7, 0, 2 * Math.PI);
     ctx.stroke();
-	
+		
+		//Lewa tęczówka
 	ctx.beginPath();
-	ctx.lineWidth=3;
-	ctx.strokeStyle='black';
-    ctx.arc(235, 225, 4, 0, 2 * Math.PI);
+	ctx.lineWidth=4;
+	ctx.strokeStyle='green';
+    ctx.arc(280,280, 4, 0, 2 * Math.PI);
     ctx.stroke();
 	
+		//Prawa tęczówka
 	ctx.beginPath();
-	ctx.lineWidth=3;
-	ctx.strokeStyle='black';
-    ctx.arc(270, 225, 4, 0, 2 * Math.PI);
-    ctx.stroke();
-	
-	
-	
+	ctx.lineWidth=4;
+	ctx.strokeStyle='green';
+    ctx.arc(320,280, 4, 0, 2 * Math.PI);
+    ctx.stroke();	
+			
+		//Lewa źrenica
 	ctx.beginPath();
 	ctx.lineWidth=4;
 	ctx.strokeStyle='black';
-    ctx.arc(271, 225, 2, 0, 2 * Math.PI);
+    ctx.arc(280,280, 2, 0, 2 * Math.PI);
     ctx.stroke();
 	
+		//Prawa źrenica
 	ctx.beginPath();
 	ctx.lineWidth=4;
 	ctx.strokeStyle='black';
-    ctx.arc(236, 225, 2, 0, 2 * Math.PI);
+    ctx.arc(320,280, 2, 0, 2 * Math.PI);
     ctx.stroke();
-
+	
+		//Blask w oczach
     ctx.fillStyle='white';
-	ctx.fillRect(232,222,2,2)
-	ctx.fillRect(267,222,2,2)
+			//Lewy	
+	ctx.fillRect(277,277,2,2)
+			//Prawy
+	ctx.fillRect(317,277,2,2)
 
 });
-
-
 
 </script>
 </head>
 <body>
-    <canvas id="canvas" width=600 height=600></canvas>
+    <canvas id="myCanvas" width=600 height=600></canvas>
 </body>
 </html>
