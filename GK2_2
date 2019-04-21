@@ -125,7 +125,7 @@
                 graphics.fillStyle = "blue";
             }
 			else if (colorChoice == 4) {
-                graphics.fillStyle = "purple";
+                graphics.fillStyle = "orange";
             }
 			
             if ( Kształt == 0){
@@ -133,30 +133,14 @@
                 graphics.strokeRect(x-20,y-20,40,40);
             } else if ( Kształt == 1){
                 graphics.fillPoly(
-                    x, y - 50,
-                    x + 15, y - 10,
-                    x + 50, y - 10,
-                    x + 20, y + 15,
-                    x + 30, y + 50,
-                    x ,y + 25,
-                    x - 30, y + 50,
-                    x - 20 ,y + 15,
-                    x - 50,y - 10,
-                    x - 10 ,y - 10,
-                    x, y - 50
+                    x, y - 45,
+                    x + 30, y,
+					x - 30, y
                     );
                 graphics.strokePoly(
-                    x, y - 50,
-                    x + 15, y - 10,
-                    x + 50, y - 10,
-                    x + 20, y + 15,
-                    x + 30, y + 50,
-                    x ,y + 25,
-                    x - 30, y + 50,
-                    x - 20 ,y + 15,
-                    x - 50,y - 10,
-                    x - 10 ,y - 10,
-                    x, y - 50
+                    x, y - 45,
+                    x + 30, y,
+					x - 30, y					
                 );    
                     }
             
@@ -207,17 +191,7 @@
            this.moveTo(x1,y1);
            this.lineTo(x2,y2);
            this.stroke();
-        }
-        graphics.fillCircle = function(x,y,r) {
-           this.beginPath();
-           this.arc(x,y,r,0,2*Math.PI,false);
-           this.fill();
-        }
-        graphics.strokeCircle = function(x,y,radius) {
-           this.beginPath();
-           this.arc(x,y,radius,0,2*Math.PI,false);
-           this.stroke();
-        }
+        }        
         graphics.fillPoly = function() { 
             if (arguments.length < 6)
                return;
@@ -239,25 +213,7 @@
             }
             this.closePath();
             this.stroke();
-        }
-        graphics.fillOval = function(x,y,horizontalRadius,verticalRadius) {
-           this.save();
-           this.translate(x,y);
-           this.scale(horizontalRadius,verticalRadius);
-           this.beginPath();
-           this.arc(0,0,1,0,2*Math.PI,false);
-           this.restore();
-           this.fill();
-        }
-        graphics.strokeOval = function(x,y,horizontalRadius,verticalRadius) {
-           this.save();
-           this.translate(x,y);
-           this.scale(horizontalRadius,verticalRadius);
-           this.beginPath();
-           this.arc(0,0,1,0,2*Math.PI,false);
-           this.restore();
-           this.stroke();
-        }
+        }        
         graphics.getRGB = function(x,y) {
             var color = this.getImageData(x,y,1,1);
             return color.data;
@@ -281,7 +237,7 @@
             document.getElementById("canvasholder").innerHTML =
                "<p>Canvas graphics is not supported.<br>" +
                "An error occurred while initializing graphics.</p>";
-               return;
+               return; 
         }
         addGraphicsContextExtras(graphics);
         installMouseHandler();
@@ -315,14 +271,14 @@
         <option value="1">Red</option>
         <option value="2">Green</option>
         <option value="3">Blue</option>
-		<option value="4">Purple</option>
+		<option value="4">Orange</option>
     </select>
 	<button id="clearButton">Wyczyść</button>
 </p>
 <p><b>Kształt:</b>
     <select id="toolChoice">
         <option value="0">Kwadrat</opttion>
-        <option value="1">Gwiazda</option>
+        <option value="1">Trójkąt</option>
     </select>
 </p>
 
