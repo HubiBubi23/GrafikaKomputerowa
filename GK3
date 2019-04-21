@@ -31,8 +31,7 @@
     /**
      *  Builds the data structure that represents the entire picture.
      */
-     function DrawObject (){
-        var rect;  // (DELETE THIS EXAMPLE)
+     function DrawObject (){        
         var triangle;
         var kolo;
         var kolo2;
@@ -54,8 +53,8 @@
 		
         this.rect.setScale(3.2, 0.18).setColor("red").setRotation(-20);
 		
-        this.kolo.setScale(1, 1).setColor("black").setTranslation(-1.5, 0.5);
-        this.kolo2.setScale(1, 1).setColor("black").setTranslation(1.5, -0.5);
+        this.kolo.setScale(1, 1).setColor("gray").setTranslation(-1.5, 0.5);
+        this.kolo2.setScale(1, 1).setColor("gray").setTranslation(1.5, -0.5);
      }
      
      DrawObject.prototype.translate = function(x, y) {
@@ -298,7 +297,7 @@
 
     var filledPoly = new SceneGraphNode();
     filledPoly.doDraw = function(g) {
-            var ile = 14;
+            var ile = 15;
             var size = 0.6;
             var Xcenter = 0;
             var Ycenter = 0;
