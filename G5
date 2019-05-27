@@ -91,14 +91,14 @@ public class lab5 extends GLJPanel implements GLEventListener, KeyListener {
         gl2.glColor3f(1.0f, 1.0f, 1.0f);
         gl2.glScaled(0.35, 1, 0.35);
         gl2.glBegin(gl2.GL_LINE_STRIP); //  lamane otwarte
-        //ciag punkt�w spirali
+        //ciag punktów spirali
         for (double j = 0.1, i = 0; i < 300; i++, j += 0.1) {
             if (i <= 100)
                 gl2.glColor3f(0.0f, 1.0f, 0.0f);//zielony
             else if (i <= 200)
                 gl2.glColor3f(0.0f, 0.0f, 1.0f);//niebieski
             else if (i <= 300)
-                gl2.glColor3f(0.6f, 0.3f, 0.0f);//br�zowy
+                gl2.glColor3f(0.6f, 0.3f, 0.0f);//br¹zowy
             gl2.glVertex3d(Math.cos(i / 15.0), i / 50.0, Math.sin(i / 15.0));
         }
         gl2.glEnd();
@@ -131,7 +131,7 @@ public class lab5 extends GLJPanel implements GLEventListener, KeyListener {
         gl2.glPushMatrix();
         gl2.glRotated(72, 0, 1, 0);
         gl2.glTranslated(0, 0, 0);
-        Triangle(gl2, 1.0f, 1.0f, 0.0f);// z�ty
+        Triangle(gl2, 1.0f, 1.0f, 0.0f);// zó³ty
         gl2.glPopMatrix();
 
         gl2.glPushMatrix();
@@ -143,7 +143,7 @@ public class lab5 extends GLJPanel implements GLEventListener, KeyListener {
         gl2.glPushMatrix();
         gl2.glRotated(120, 0, 1, 0);
         gl2.glTranslated(0, 0, 0);
-        Triangle(gl2, 1.0f, 1.0f, 1.0f);// bia�y
+        Triangle(gl2, 1.0f, 1.0f, 1.0f);// bia³y
         gl2.glPopMatrix();
 
         gl2.glPushMatrix();
@@ -155,7 +155,7 @@ public class lab5 extends GLJPanel implements GLEventListener, KeyListener {
         gl2.glPushMatrix();
         gl2.glRotated(168, 0, 1, 0);
         gl2.glTranslated(0, 0, 0);
-        Triangle(gl2, 0.8f, 0.3f, 1.0f);// r�owy
+        Triangle(gl2, 0.8f, 0.3f, 1.0f);// ró¿owy
         gl2.glPopMatrix();
 
         gl2.glPushMatrix();
@@ -185,7 +185,7 @@ public class lab5 extends GLJPanel implements GLEventListener, KeyListener {
         gl2.glPushMatrix();
         gl2.glRotated(288, 0, 1, 0);
         gl2.glTranslated(0, 0, 0);
-        Triangle(gl2, 0.8f, 0.5f, 0.2f);// pomara�czowy
+        Triangle(gl2, 0.8f, 0.5f, 0.2f);// pomarañczowy
         gl2.glPopMatrix();
 
         gl2.glPushMatrix();
@@ -219,11 +219,11 @@ public class lab5 extends GLJPanel implements GLEventListener, KeyListener {
     public void Triangle(GL2 gl2, float r, float g, float b) {
         gl2.glColor3f(r, g, b);
         gl2.glBegin(GL2.GL_POLYGON);
-        //prawy wierzcho�ek
+        //prawy wierzcho³ek
         gl2.glVertex3d(5, 0.5, 0);
-        //g�rny wierzcholek
+        //górny wierzcholek
         gl2.glVertex3d(0, 7.071, 0);
-        //lewy wierzcho�ek
+        //lewy wierzcho³ek
         gl2.glVertex3d(4.57, 0.5, 2.0335);
         gl2.glEnd();
     }
@@ -336,7 +336,7 @@ public class lab5 extends GLJPanel implements GLEventListener, KeyListener {
      * change.
      */
 
-    //przypisanie obrot�w do przycisk�w
+    //przypisanie obrotów do przycisków
     public void keyPressed(KeyEvent evt) {
         int key = evt.getKeyCode();
         boolean repaint = true;
