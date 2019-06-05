@@ -224,7 +224,6 @@ function doKey(evt) {
     }
 } // end doKey();
 
-
 /* Initialize the WebGL context.  Called from init() */
 function initGL() {
 
